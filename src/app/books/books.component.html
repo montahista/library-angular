@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="table-responsive">
+      <table class="table table-vcenter card-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>bookName</th>
+            <th>authorName</th>
+            <th>quantity</th>
+            <th class="w-1"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ book.bookName }}</td>
+            <td>{{ book.authorName }}</td>
+            <td>{{ book.quantity }}</td>
+            <td>
+              <button
+                class="btn btn-secondary"
+                (click)="deleteBook(book.bookId)"
+              >
+                Delete
+              </button>
+              <button class="btn btn-warning ms-2" (click)="updateBook(i)">
+                update
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
